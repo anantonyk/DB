@@ -141,10 +141,7 @@ CREATE TABLE [symptom] (
 	id_symptom integer NOT NULL UNIQUE,
 	symptom NVARCHAR(255) NOT NULL UNIQUE,
 	id_ill integer NOT NULL,
-  CONSTRAINT [PK_SYMPTOM] PRIMARY KEY CLUSTERED
-  (
-  [id_symptom] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF),
+  PRIMARY KEY ([id_symptom]),
   FOREIGN KEY ([id_ill]) REFERENCES [ill]([id_ill])
 
 )
