@@ -124,10 +124,9 @@ alter table [medicine-ill]
 	add constraint FK_med
 	foreign key (id_med) references medicine(id_medicine) on delete cascade;
 
-
-
 alter table sell
     add constraint PK_sell primary key (id_check,id_medicine)
-	
-alter table sell
-	add constraint UQ_sell unique(id_check,id_medicine)
+
+drop table [client-disc];
+drop table discount;
+
