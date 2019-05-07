@@ -17,4 +17,13 @@ select client.[name], country.country_name
 from client inner join town 
 on client.id_town=town.id_town 
 inner join country on town.id_country=country.id_country
-select Pharmacy.pharmacy, worker.first_name, worker.last_name from worker inner join Pharmacy on worker.id_pharmacy=Pharmacy.id_pharmacy where worker.id_position=1select medicine.medicine, medicine.price, medicine_group.medgroup from medicine inner join medicine_group on medicine.id_group=medicine_group.id_group where medicine.price<100
+
+select Pharmacy.pharmacy, worker.first_name, worker.last_name 
+from worker inner join Pharmacy 
+on worker.id_pharmacy=Pharmacy.id_pharmacy 
+where worker.id_position=1
+
+select medicine.medicine, medicine.price, medicine_group.medgroup 
+from medicine inner join medicine_group 
+on medicine.id_group=medicine_group.id_group 
+where medicine.price<100
