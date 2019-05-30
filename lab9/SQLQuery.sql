@@ -19,3 +19,9 @@ from worker inner join [check] on worker.id_worker=[check].id_worker
 
  select top 1 Pharmacy.pharmacy, count([id_check]) as [check] 
  from [check] inner join Pharmacy on Pharmacy.id_pharmacy=[check].id_pharmacy group by pharmacy order by [check] desc 
+
+ select Pharmacy.pharmacy, count(medicine.medicine) as saled
+ from Pharmacy inner join [check] on Pharmacy.id_pharmacy=[check].id_pharmacy 
+ inner join sell on [check].id_check=sell.id_check 
+ inner join medicine on sell.id_medicine=medicine.id_medicine where Month([check].[date])=4
+ group by pharmacy with rollup order by saled desc
